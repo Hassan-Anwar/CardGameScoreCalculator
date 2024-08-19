@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Card Game Score Calculator";
+}
+
+<h2>Card Game Score Calculator</h2>
+
+<form asp-action="CalculateScore" method="post">
+    <div class="form-group">
+        <label for="cardInput">Enter the list of cards:</label>
+        <input type="text" class="form-control" id="cardInput" name="cardInput" placeholder="e.g., 2C,3H,JK">
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate Score</button>
+</form>
+
+@if (ViewBag.Score != null)
+{
+    <div class="alert alert-success">
+        <strong>Score: </strong>@ViewBag.Score
+    </div>
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        <strong>Error: </strong>@ViewBag.ErrorMessage
+    </div>
+}
